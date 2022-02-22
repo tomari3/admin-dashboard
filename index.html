@@ -4,11 +4,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+
     <title>Admin Dashboard</title>
   </head>
   <body>
     <main class="main-grid-container">
       <aside class="control-sidebar">
+        <span>
+          <button>Logo</button>
+          <h1>Dashboard</h1>
+        </span>
         <div class="general-icons">
           <ul>
             <li>home</li>
@@ -35,62 +43,77 @@
           <a href="#">username</a>
         </nav>
         <div class="lower-header">
-          <button>pfp</button>
           <div class="user-welcome">
-            <p>Hi there,</p>
-            <h1>username (@usern)</h1>
+            <button>pfp</button>
+            <span>
+              <p>Hi there,</p>
+              <h1>username (@usern)</h1>
+            </span>
           </div>
-          <button>new</button>
-          <button>upload</button>
-          <button>share</button>
+          <div class="header-btns">
+            <button>new</button>
+            <button>upload</button>
+            <button>share</button>
+          </div>
         </div>
       </header>
-      <main class="sub-main-container"></main>
-      <section class="projects">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
-      </section>
-      <section class="announcements">
-        <div>
-          <h1>info</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      <div class="sub-main-container">
+        <h1>Projects</h1>
+        <section class="projects">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>6</div>
+          <div>6</div>
+        </section>
+        <div class="right-side">
+          <h1 class="header-r">announcements</h1>
+          <section class="announcements">
+            <div>
+              <h1>info</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div>
+              <h1>info</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+            <div>
+              <h1>info</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+          </section>
+          <h1 class="header-r">trending</h1>
+          <section class="trending">
+            <div>
+              <button>pfp</button>
+              <span>
+                <h1>@namen</h1>
+                <p>Its doing it</p>
+              </span>
+            </div>
+            <div>
+              <button>pfp</button>
+              <span>
+                <h1>@namen</h1>
+                <p>Its doing it</p>
+              </span>
+            </div>
+            <div>
+              <button>pfp</button>
+              <span>
+                <h1>@namen</h1>
+                <p>Its doing it</p>
+              </span>
+            </div>
+          </section>
         </div>
-        <div>
-          <h1>info</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </div>
-        <div>
-          <h1>info</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </div>
-      </section>
-      <section class="trending">
-        <div>
-          <button>pfp</button>
-          <span>
-            <h1>@namen</h1>
-            <p>Its doing it</p>
-          </span>
-        </div>
-        <div>
-          <button>pfp</button>
-          <span>
-            <h1>@namen</h1>
-            <p>Its doing it</p>
-          </span>
-        </div>
-        <div>
-          <button>pfp</button>
-          <span>
-            <h1>@namen</h1>
-            <p>Its doing it</p>
-          </span>
-        </div>
-      </section>
+      </div>
+      <footer>
+        <h1>footer info</h1>
+      </footer>
     </main>
   </body>
 </html>
