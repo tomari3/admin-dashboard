@@ -136,7 +136,33 @@ table {
 
 :root {
   font-family: "Sora", sans-serif;
-  --bg: #e2e8f0;
+  --bg: #eaeaea;
+  --side-bar: #29b6f6;
+  --buttons: #29b6f6;
+  --buttons-click: #0086c3;
+  --nav: #ffffff;
+  --cards: #ffffff;
+  --cards-border: rgb(255, 136, 0);
+  --text: black;
+  --side-text: white;
+  --icons: #f5f5f6;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --side-bar: #104e6a;
+    --buttons: #104e6a;
+    --buttons-click: #0086c3;
+    --nav: #1d1d1d;
+    --cards: #1d1d1d;
+    --cards-border: rgb(255, 136, 0);
+    --text: rgb(255, 255, 255);
+    --side-text: rgb(255, 255, 255);
+    --icons: #202020;
+    --shadow: rgba(255, 255, 255, 0.1);
+  }
 }
 
 .main-grid-container {
@@ -151,7 +177,7 @@ table {
 }
 
 .control-sidebar {
-  background-color: #1992d4;
+  background-color: var(--side-bar);
   grid-area: sidebar;
   display: grid;
   grid-template-rows: minmax(50px, 10%) minmax(150px, 30%) minmax(100px, 20%);
@@ -161,7 +187,7 @@ table {
     "g-icons general"
     "s-icons settings";
   gap: 1rem;
-  color: white;
+  color: var(--side-text);
   padding-left: min(3rem, 14px);
   padding-top: 1vh;
 }
@@ -210,6 +236,7 @@ aside .general {
   grid-area: general;
   display: flex;
   justify-content: space-between;
+  color: var(--side-text);
 }
 
 .general ul {
@@ -224,6 +251,7 @@ aside .settings {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  color: var(--side-text);
 }
 
 .settings ul {
@@ -237,17 +265,15 @@ aside .settings {
   align-items: center;
   padding: 16px 6vw 3vh 3vw;
   gap: 2rem;
-  background-color: #ffffff;
+  background-color: var(--nav);
   grid-area: header;
   display: grid;
   grid-template-rows: 1fr minmax(10px, 3fr);
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
-    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  box-shadow: var(--shadow) 0px 20px 25px -5px, var(--shadow) 0px 10px 10px -5px;
 }
 
 .main-header .upper-header {
   align-items: center;
-
   display: grid;
   grid-template-columns: 60% minmax(0, 3fr) repeat(3, auto);
   grid-template-areas: "search . notif pfp link";
@@ -271,7 +297,7 @@ header nav span:nth-child(3) img {
 header nav a {
   grid-area: link;
   text-decoration: none;
-  color: black;
+  color: var(--text);
   font-size: 1.1vmax;
 }
 
@@ -308,7 +334,7 @@ header nav a {
 
 .user-info a {
   text-decoration: none;
-  color: black;
+  color: var(--text);
   font-weight: bold;
   font-size: 1.5rem;
 }
@@ -319,12 +345,22 @@ header nav a {
 }
 
 .header-btns button {
-  background-color: #1992d4;
+  background-color: var(--side-bar);
   border-style: none;
   padding: 8px 22px;
   border-radius: max(1rem, 100px);
-  color: white;
+  color: var(--side-text);
   font-size: 2vmin;
+  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.header-btns button:hover {
+  scale: 1.15;
+}
+
+.header-btns button:active {
+  scale: 1;
+  background-color: var(--buttons-click);
 }
 
 .sub-main-container {
@@ -370,11 +406,11 @@ header nav a {
 }
 
 .projects > div {
-  background-color: #ffffff;
+  background-color: var(--nav);
   box-sizing: border-box;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
   border-radius: 0.6em;
-  border-left: solid orange;
+  border-left: solid var(--cards-border);
   border-width: 0.6rem;
   display: grid;
   grid-template-rows: 1fr 40px;
@@ -436,10 +472,10 @@ header nav a {
   grid-area: header2;
 }
 .announcements {
-  background-color: #ffffff;
+  background-color: var(--cards);
   padding: 1em 1.8em 1.3em 1.8em;
   box-sizing: border-box;
-  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+  box-shadow: var(--shadow) 0px 3px 5px;
   border-radius: 0.6em;
   margin-bottom: 1.5rem;
 
@@ -496,7 +532,7 @@ header nav a {
 }
 
 .trending {
-  background-color: #ffffff;
+  background-color: var(--cards);
   padding: 1.1em 1em;
   box-sizing: border-box;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
@@ -528,6 +564,15 @@ header nav a {
 footer {
   background-color: var(--bg);
   grid-area: footer;
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  box-shadow: var(--shadow) 0px 1px 3px 0px, var(--shadow) 0px 0px 0px 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3vw;
+  font-size: 0.8rem;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--text);
 }
