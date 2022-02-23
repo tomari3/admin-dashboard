@@ -130,7 +130,12 @@ table {
 }
 
 /* code */
+
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;800&display=swap");
+/* font-family: 'Sora', sans-serif; */
+
 :root {
+  font-family: "Sora", sans-serif;
   --bg: #e2e8f0;
 }
 
@@ -149,26 +154,83 @@ table {
   background-color: #1992d4;
   grid-area: sidebar;
   display: grid;
-  grid-template-rows: minmax(50px, 10%) minmax(150px, 40%) minmax(100px, 40%);
+  grid-template-rows: minmax(50px, 10%) minmax(150px, 30%) minmax(100px, 20%);
+  grid-template-columns: 50px 1fr;
   grid-template-areas:
-    "logo"
-    "general"
-    "settings";
+    "logo logo"
+    "g-icons general"
+    "s-icons settings";
+  gap: 1rem;
+  color: white;
+  padding-left: min(3rem, 14px);
+  padding-top: 1vh;
 }
 
-aside span {
-  /* background-color: rgb(111, 111, 212); */
+.general-icons {
+  grid-area: g-icons;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.general-icons img {
+  max-height: 20px;
+  max-width: 20px;
+}
+
+.settings-icons img {
+  max-height: 20px;
+  max-width: 20px;
+}
+
+.settings-icons {
+  grid-area: s-icons;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  justify-content: space-evenly;
+  flex: 1 1 auto;
+}
+
+.control-sidebar > span {
+  /* background-color: rgb(32, 32, 68); */
   grid-area: logo;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1.5vw;
+  font-size: 1.5vmax;
+  padding-left: 1vw;
 }
 
-aside .general-icons {
+aside .general {
   /* background-color: cornflowerblue; */
   grid-area: general;
+  display: flex;
+  justify-content: space-between;
 }
 
-aside .settings-icons {
+.general ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+aside .settings {
   /* background-color: darkkhaki; */
   grid-area: settings;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.settings ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex: 1 1 auto;
 }
 
 .main-header {
@@ -210,7 +272,7 @@ header nav a {
   grid-area: link;
   text-decoration: none;
   color: black;
-  font-size: 1.3vmax;
+  font-size: 1.1vmax;
 }
 
 .upper-header input[type="search"] {
@@ -248,11 +310,12 @@ header nav a {
   text-decoration: none;
   color: black;
   font-weight: bold;
+  font-size: 1.5rem;
 }
 
 .header-btns {
   display: flex;
-  gap: 4vw;
+  gap: min(4vw, 40px);
 }
 
 .header-btns button {
@@ -282,6 +345,11 @@ header nav a {
   padding-bottom: clamp(5px, 2rem, 2rem);
   padding-right: 6vw;
   column-gap: clamp(5px, 3rem, 3rem);
+}
+
+.sub-main-container > h1 {
+  font-weight: bold;
+  font-size: 1.2em;
 }
 
 .sub-main-container > h1:first-child {
@@ -356,6 +424,11 @@ header nav a {
     "trnd";
 }
 
+.right-side .header-r {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
 .right-side .header-r:nth-of-type(1) {
   grid-area: header1;
 }
@@ -412,6 +485,13 @@ header nav a {
     width: 0;
     height: 0;
     font-size: 0;
+  }
+
+  .control-sidebar span h1:last-child {
+    font-size: 0;
+  }
+  .control-sidebar span h1:first-child {
+    font-size: 2rem;
   }
 }
 
